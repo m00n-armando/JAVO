@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "JAVO - Java Volcano Odyssey",
   description: "Explore the beauty of Mount Ijen, Mount Bromo, and Tumpak Sewu Waterfall in East Java with JAVOTRIPS",
   openGraph: {
-    images: "https://i.imgur.com/VMbrjBm.png",
+    images: "/favicon.png",
   },
 };
 
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="https://i.imgur.com/VMbrjBm.png" />
+        <link rel="icon" href="/favicon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
