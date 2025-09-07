@@ -24,7 +24,7 @@ const translations = {
 
     // Hero
     exploreBeauty: 'Jelajahi Keindahan',
-    mountainsEastJava: 'Gunung Jawa Timur',
+    mountainsEastJava: 'Java Volcano Odyssey',
     unforgettableExperience: 'Pengalaman wisata tak terlupakan di Gunung Ijen, Bromo, dan Air Terjun Tumpak Sewu',
     bookNow: 'Pesan Sekarang',
     viewDestinations: 'Lihat Destinasi',
@@ -109,7 +109,7 @@ const translations = {
 
     // Hero
     exploreBeauty: 'Explore the Beauty',
-    mountainsEastJava: 'of East Java Mountains',
+    mountainsEastJava: 'Java Volcano Odyssey',
     unforgettableExperience: 'Unforgettable travel experience at Mount Ijen, Bromo, and Tumpak Sewu Waterfall',
     bookNow: 'Book Now',
     viewDestinations: 'View Destinations',
