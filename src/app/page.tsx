@@ -13,10 +13,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
-              </div>
-              <h1 className="text-2xl font-bold text-gray-900">Wisata Gunung</h1>
+              <img src="/logo.png" alt="JAVO Logo" className="w-10 h-10 rounded-full" />
+              <h1 className="text-2xl font-bold text-gray-900">JAVO</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">{t('home')}</Link>
@@ -85,21 +83,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">🏔️</span>
+                <img src="/logo.png" alt="Experienced Guide" className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('experiencedGuide')}</h4>
               <p className="text-gray-700">{t('experiencedGuideDesc')}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">⭐</span>
+                <img src="/logo.png" alt="Best Price" className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('bestPrice')}</h4>
               <p className="text-gray-700">{t('bestPriceDesc')}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">🛡️</span>
+                <img src="/logo.png" alt="Guaranteed Safety" className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('guaranteedSafety')}</h4>
               <p className="text-gray-700">{t('guaranteedSafetyDesc')}</p>
@@ -189,12 +187,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">W</span>
-                </div>
-                <h4 className="text-xl font-bold">Wisata Gunung</h4>
+                <img src="/logo.png" alt="JAVO Logo" className="w-8 h-8 rounded-full" />
+                <h4 className="text-xl font-bold">JAVO</h4>
               </div>
-              <p className="text-gray-300">{t('mountainTourism')}</p>
+              <p className="text-gray-300">Java Volcano Odyssey - Your Gateway to East Java's Natural Wonders</p>
             </div>
             <div>
               <h5 className="text-lg font-semibold mb-4">{t('destinations')}</h5>
@@ -223,7 +219,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p>&copy; 2024 Wisata Gunung. {t('allRightsReserved')}</p>
+            <p>&copy; 2024 JAVO - Java Volcano Odyssey. {t('allRightsReserved')}</p>
           </div>
         </div>
       </footer>
