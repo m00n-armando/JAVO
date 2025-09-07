@@ -1,0 +1,9 @@
+{
+  "/bromo/page": "app/bromo/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/ijen/page": "app/ijen/page.js",
+  "/kontak/page": "app/kontak/page.js",
+  "/page": "app/page.js",
+  "/pemesanan/page": "app/pemesanan/page.js",
+  "/tumpak-sewu/page": "app/tumpak-sewu/page.js"
+}
