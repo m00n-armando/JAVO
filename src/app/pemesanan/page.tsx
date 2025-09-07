@@ -14,7 +14,7 @@ export default function PemesananPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <Image src="https://i.imgur.com/VMbrjBm.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
+              <Image src="/logo.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">JAVO</h1>
                 <p className="text-sm text-gray-600">Java Volcano Odyssey</p>

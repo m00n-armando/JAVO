@@ -14,7 +14,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <Image src="https://i.imgur.com/VMbrjBm.png" alt="JAVO Logo" width={40} height={40} className="w-10 h-10 rounded-full" />
+              <Image src="/logo.png" alt="JAVO Logo" width={40} height={40} className="w-10 h-10 rounded-full" />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">JAVO</h1>
                 <p className="text-sm text-gray-600">Java Volcano Odyssey</p>
@@ -56,7 +56,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"}}>
+      <section className="relative h-screen bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"}}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white px-4 sm:px-6 lg:px-8">
@@ -87,21 +87,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image src="https://i.imgur.com/VMbrjBm.png" alt="Experienced Guide" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="/logo.png" alt="Experienced Guide" width={32} height={32} className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('experiencedGuide')}</h4>
               <p className="text-gray-700">{t('experiencedGuideDesc')}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image src="https://i.imgur.com/VMbrjBm.png" alt="Best Price" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="/logo.png" alt="Best Price" width={32} height={32} className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('bestPrice')}</h4>
               <p className="text-gray-700">{t('bestPriceDesc')}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image src="https://i.imgur.com/VMbrjBm.png" alt="Guaranteed Safety" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="/logo.png" alt="Guaranteed Safety" width={32} height={32} className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('guaranteedSafety')}</h4>
               <p className="text-gray-700">{t('guaranteedSafetyDesc')}</p>
@@ -111,16 +111,16 @@ export default function Home() {
       </section>
 
       {/* Destinations Section */}
-      <section id="destinasi" className="py-16">
+      <section id="destinasi" className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">{t('featuredDestinations')}</h3>
-            <p className="text-lg text-gray-700">{t('discoverBeauty')}</p>
+            <h3 className="text-3xl font-bold text-white mb-4">{t('featuredDestinations')}</h3>
+            <p className="text-lg text-gray-300">{t('discoverBeauty')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Ijen */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
+              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
               <div className="p-6">
                 <h4 className="text-2xl font-bold mb-2 text-gray-900">{t('ijen')}</h4>
                 <p className="text-gray-700 mb-4">{t('blueFire')}</p>
@@ -136,7 +136,7 @@ export default function Home() {
 
             {/* Bromo */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
+              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
               <div className="p-6">
                 <h4 className="text-2xl font-bold mb-2 text-gray-900">{t('bromo')}</h4>
                 <p className="text-gray-700 mb-4">{t('legendarySunrise')}</p>
@@ -152,7 +152,7 @@ export default function Home() {
 
             {/* Tumpak Sewu */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
+              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
               <div className="p-6">
                 <h4 className="text-2xl font-bold mb-2 text-gray-900">{t('tumpakSewu')}</h4>
                 <p className="text-gray-700 mb-4">{t('largestWaterfall')}</p>
@@ -191,7 +191,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Image src="https://i.imgur.com/VMbrjBm.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="/logo.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
                 <h4 className="text-xl font-bold">JAVO</h4>
               </div>
               <p className="text-gray-300">Java Volcano Odyssey - Your Gateway to East Java&apos;s Natural Wonders</p>
