@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from "../context/LanguageContext";
 
 export default function KontakPage() {
@@ -13,10 +14,11 @@ export default function KontakPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">J</span>
+              <Image src="https://i.imgur.com/VMbrjBm.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">JAVO</h1>
+                <p className="text-sm text-gray-600">Java Volcano Odyssey</p>
               </div>
-              <h1 className="text-2xl font-bold text-gray-900">JAVO</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">{t('home')}</Link>
@@ -132,7 +134,7 @@ export default function KontakPage() {
             <div className="space-y-4">
               <div className="flex items-center">
                 <span className="font-medium w-20 text-gray-900">{language === 'id' ? 'Alamat:' : 'Address:'}</span>
-                <span className="text-gray-700">Jl. Wisata Gunung No. 123, Malang, Jawa Timur</span>
+                <span className="text-gray-700">Jl. JAVO No. 123, Malang, Jawa Timur</span>
               </div>
               <div className="flex items-center">
                 <span className="font-medium w-20 text-gray-900">{language === 'id' ? 'Telepon:' : 'Phone:'}</span>
@@ -140,7 +142,7 @@ export default function KontakPage() {
               </div>
               <div className="flex items-center">
                 <span className="font-medium w-20 text-gray-900">Email:</span>
-                <span className="text-gray-700">info@wisatagunung.com</span>
+                <span className="text-gray-700">info@javo.com</span>
               </div>
               <div className="flex items-center">
                 <span className="font-medium w-20 text-gray-900">{language === 'id' ? 'Jam:' : 'Hours:'}</span>
@@ -154,7 +156,7 @@ export default function KontakPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2024 Wisata Gunung. {t('allRightsReserved')}</p>
+          <p>&copy; 2024 JAVO - Java Volcano Odyssey. {t('allRightsReserved')}</p>
         </div>
       </footer>
     </div>

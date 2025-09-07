@@ -17,8 +17,8 @@ const Chatbot = () => {
     {
       id: 1,
       text: language === 'id'
-        ? 'Halo! Saya adalah asisten virtual Wisata Gunung. Ada yang bisa saya bantu?'
-        : 'Hello! I am the virtual assistant for Mountain Tourism. How can I help you?',
+        ? 'Halo! Saya adalah asisten virtual JAVO. Ada yang bisa saya bantu?'
+        : 'Hello! I am the virtual assistant for JAVO. How can I help you?',
       isBot: true,
       timestamp: new Date()
     }
@@ -36,10 +36,10 @@ const Chatbot = () => {
 
   const responses: Record<string, Record<string, string>> = {
     id: {
-      'halo': 'Halo! Selamat datang di Wisata Gunung. Ada yang bisa saya bantu?',
+      'halo': 'Halo! Selamat datang di JAVO. Ada yang bisa saya bantu?',
       'harga': 'Harga paket wisata kami: Ijen Rp 1.500.000 (2 hari), Bromo Rp 800.000 (1-2 hari), Tumpak Sewu Rp 350.000 (1 hari). Ingin tahu detail lebih lanjut?',
       'paket': 'Kami memiliki 3 paket utama: Gunung Ijen (Blue Fire), Gunung Bromo (Sunrise), dan Air Terjun Tumpak Sewu. Semua paket include guide, transport, dan makan.',
-      'kontak': 'Anda bisa menghubungi kami di +62 812-3456-7890 atau email ke info@wisatagunung.com',
+      'kontak': 'Anda bisa menghubungi kami di +62 812-3456-7890 atau email ke info@javo.com',
       'booking': 'Untuk booking, silakan kunjungi halaman pemesanan atau hubungi kami langsung.',
       'penjemputan': 'Ya, kami menyediakan layanan penjemputan dari lokasi Anda. Biaya penjemputan akan ditambahkan ke total pembayaran. Silakan isi kolom lokasi penjemputan saat booking.',
       'pickup': 'Ya, kami menyediakan layanan penjemputan dari lokasi Anda. Biaya penjemputan akan ditambahkan ke total pembayaran. Silakan isi kolom lokasi penjemputan saat booking.',
@@ -47,10 +47,10 @@ const Chatbot = () => {
       'default': 'Maaf, saya belum mengerti pertanyaan Anda. Silakan hubungi customer service kami di +62 812-3456-7890 untuk bantuan lebih lanjut.'
     },
     en: {
-      'hello': 'Hello! Welcome to Mountain Tourism. How can I help you?',
+      'hello': 'Hello! Welcome to JAVO. How can I help you?',
       'price': 'Our tour package prices: Ijen Rp 1,500,000 (2 days), Bromo Rp 800,000 (1-2 days), Tumpak Sewu Rp 350,000 (1 day). Would you like more details?',
       'package': 'We have 3 main packages: Mount Ijen (Blue Fire), Mount Bromo (Sunrise), and Tumpak Sewu Waterfall. All packages include guide, transport, and meals.',
-      'contact': 'You can contact us at +62 812-3456-7890 or email info@wisatagunung.com',
+      'contact': 'You can contact us at +62 812-3456-7890 or email info@javo.com',
       'booking': 'For booking, please visit our booking page or contact us directly.',
       'pickup': 'Yes, we provide pickup service from your location. The pickup fee will be added to the total payment. Please fill in the pickup location field when booking.',
       'penjemputan': 'Yes, we provide pickup service from your location. The pickup fee will be added to the total payment. Please fill in the pickup location field when booking.',

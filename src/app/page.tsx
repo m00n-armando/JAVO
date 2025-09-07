@@ -14,8 +14,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <Image src="/logo.png" alt="JAVO Logo" width={40} height={40} className="w-10 h-10 rounded-full" />
-              <h1 className="text-2xl font-bold text-gray-900">JAVO</h1>
+              <Image src="https://i.imgur.com/VMbrjBm.png" alt="JAVO Logo" width={40} height={40} className="w-10 h-10 rounded-full" />
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">JAVO</h1>
+                <p className="text-sm text-gray-600">Java Volcano Odyssey</p>
+              </div>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">{t('home')}</Link>
@@ -84,21 +87,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image src="/logo.png" alt="Experienced Guide" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="https://i.imgur.com/VMbrjBm.png" alt="Experienced Guide" width={32} height={32} className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('experiencedGuide')}</h4>
               <p className="text-gray-700">{t('experiencedGuideDesc')}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image src="/logo.png" alt="Best Price" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="https://i.imgur.com/VMbrjBm.png" alt="Best Price" width={32} height={32} className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('bestPrice')}</h4>
               <p className="text-gray-700">{t('bestPriceDesc')}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image src="/logo.png" alt="Guaranteed Safety" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="https://i.imgur.com/VMbrjBm.png" alt="Guaranteed Safety" width={32} height={32} className="w-8 h-8 rounded-full" />
               </div>
               <h4 className="text-xl font-semibold mb-2 text-gray-900">{t('guaranteedSafety')}</h4>
               <p className="text-gray-700">{t('guaranteedSafetyDesc')}</p>
@@ -188,7 +191,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Image src="/logo.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
+                <Image src="https://i.imgur.com/VMbrjBm.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
                 <h4 className="text-xl font-bold">JAVO</h4>
               </div>
               <p className="text-gray-300">Java Volcano Odyssey - Your Gateway to East Java&apos;s Natural Wonders</p>
@@ -212,7 +215,7 @@ export default function Home() {
             <div>
               <h5 className="text-lg font-semibold mb-4">{t('contactUsFooter')}</h5>
               <div className="space-y-2 text-gray-300">
-                <p>Jl. Wisata Gunung No. 123</p>
+                <p>Jl. JAVO No. 123</p>
                 <p>Malang, Jawa Timur</p>
                 <p>+62 812-3456-7890</p>
                 <p>info@wisatagunung.com</p>
