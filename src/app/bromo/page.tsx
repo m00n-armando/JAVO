@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useLanguage } from "../context/LanguageContext";
 
 export default function BromoPage() {
@@ -18,11 +19,11 @@ export default function BromoPage() {
               <h1 className="text-2xl font-bold text-gray-900">Wisata Gunung</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-gray-700 hover:text-blue-600 font-medium">{t('home')}</a>
-              <a href="/ijen" className="text-gray-700 hover:text-blue-600 font-medium">{t('ijen')}</a>
-              <a href="/bromo" className="text-gray-700 hover:text-blue-600 font-medium">{t('bromo')}</a>
-              <a href="/tumpak-sewu" className="text-gray-700 hover:text-blue-600 font-medium">{t('tumpakSewu')}</a>
-              <a href="/kontak" className="text-gray-700 hover:text-blue-600 font-medium">{t('contact')}</a>
+              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">{t('home')}</Link>
+              <Link href="/ijen" className="text-gray-700 hover:text-blue-600 font-medium">{t('ijen')}</Link>
+              <Link href="/bromo" className="text-gray-700 hover:text-blue-600 font-medium">{t('bromo')}</Link>
+              <Link href="/tumpak-sewu" className="text-gray-700 hover:text-blue-600 font-medium">{t('tumpakSewu')}</Link>
+              <Link href="/kontak" className="text-gray-700 hover:text-blue-600 font-medium">{t('contact')}</Link>
             </nav>
             <div className="flex items-center space-x-4">
               {/* Language Toggle */}
@@ -44,9 +45,9 @@ export default function BromoPage() {
                   EN
                 </button>
               </div>
-              <a href="/pemesanan" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+              <Link href="/pemesanan" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
                 {t('bookTour')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -104,9 +105,9 @@ export default function BromoPage() {
             </div>
 
             <div className="text-center">
-              <a href="/pemesanan" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+              <Link href="/pemesanan" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
                 {language === 'id' ? 'Pesan Paket Ini' : 'Book This Package'}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ interface Message {
 }
 
 const Chatbot = () => {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
