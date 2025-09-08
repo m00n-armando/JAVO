@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function PemesananPage() {
