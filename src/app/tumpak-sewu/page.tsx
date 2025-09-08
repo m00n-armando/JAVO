@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import { useLanguage } from "../context/LanguageContext";
 import MobileMenu from "../components/MobileMenu";
 
@@ -36,7 +36,6 @@ export default function TumpakSewuPage() {
               <Link href="/ijen" className="text-gray-700 hover:text-blue-600 font-medium">{t('ijen')}</Link>
               <Link href="/bromo" className="text-gray-700 hover:text-blue-600 font-medium">{t('bromo')}</Link>
               <Link href="/tumpak-sewu" className="text-gray-700 hover:text-blue-600 font-medium">{t('tumpakSewu')}</Link>
-              <Link href="/map" className="text-gray-700 hover:text-blue-600 font-medium">Peta</Link> {/* Added Map Link */}
               <Link href="/kontak" className="text-gray-700 hover:text-blue-600 font-medium">{t('contact')}</Link>
             </nav>
             <div className="hidden md:flex items-center space-x-4">

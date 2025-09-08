@@ -1,11 +1,51 @@
 'use client';
 
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import { useLanguage } from "../context/LanguageContext";
+import { useState, useEffect } from 'react';
 
 export default function PemesananPage() {
   const { language, setLanguage, t } = useLanguage();
+  const [selectedDestination, setSelectedDestination] = useState('');
+  const [selectedPackage, setSelectedPackage] = useState('');
+  const [numberOfParticipants, setNumberOfParticipants] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const prices: Record<string, Record<string, number>> = {
+    ijen: {
+      premium: 1500000,
+      standard: 1500000,
+      budget: 1500000,
+    },
+    bromo: {
+      premium: 1500000,
+      standard: 1500000,
+      budget: 1500000,
+    },
+    'tumpak-sewu': {
+      premium: 1500000,
+      standard: 1500000,
+      budget: 1500000,
+    },
+  };
+
+  useEffect(() => {
+    if (selectedDestination && selectedPackage && numberOfParticipants > 0) {
+      const basePrice = prices[selectedDestination]?.[selectedPackage] || 0;
+      setTotalPrice(basePrice * numberOfParticipants);
+    } else {
+      setTotalPrice(0);
+    }
+  }, [selectedDestination, selectedPackage, numberOfParticipants]);
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat(language === 'id' ? 'id-ID' : 'en-US', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0,
+    }).format(price);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -126,6 +166,8 @@ export default function PemesananPage() {
                   name="destinasi"
                   className="w-full px-3 py-2 border border-gray-600 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
+                  value={selectedDestination}
+                  onChange={(e) => setSelectedDestination(e.target.value)}
                 >
                   <option value="" className="bg-gray-700 text-white">{t('selectDestinationPlaceholder')}</option>
                   <option value="ijen" className="bg-gray-700 text-white">{t('ijenDestination')}</option>
@@ -158,6 +200,8 @@ export default function PemesananPage() {
                   min="1"
                   className="w-full px-3 py-2 border border-gray-600 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
+                  value={numberOfParticipants}
+                  onChange={(e) => setNumberOfParticipants(parseInt(e.target.value))}
                 />
               </div>
 
@@ -170,6 +214,8 @@ export default function PemesananPage() {
                   name="paket"
                   className="w-full px-3 py-2 border border-gray-600 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
+                  value={selectedPackage}
+                  onChange={(e) => setSelectedPackage(e.target.value)}
                 >
                   <option value="" className="bg-gray-700 text-white">{t('selectPackagePlaceholder')}</option>
                   <option value="premium" className="bg-gray-700 text-white">{t('premiumPackage')}</option>
@@ -198,19 +244,19 @@ export default function PemesananPage() {
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-200 font-medium">{t('destination')}</span>
-                    <span id="summary-destinasi" className="text-white font-semibold">-</span>
+                    <span id="summary-destinasi" className="text-white font-semibold">{selectedDestination ? t(`${selectedDestination}Destination`) : '-'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-200 font-medium">{t('participants')}</span>
-                    <span id="summary-jumlah" className="text-white font-semibold">-</span>
+                    <span id="summary-jumlah" className="text-white font-semibold">{numberOfParticipants}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-200 font-medium">{t('packageLabel')}</span>
-                    <span id="summary-paket" className="text-white font-semibold">-</span>
+                    <span id="summary-paket" className="text-white font-semibold">{selectedPackage ? t(`${selectedPackage}Package`) : '-'}</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg border-t border-gray-600 pt-2">
                     <span className="text-white">{t('total')}</span>
-                    <span id="summary-total" className="text-blue-400 font-bold">-</span>
+                    <span id="summary-total" className="text-blue-400 font-bold">{formatPrice(totalPrice)}</span>
                   </div>
                 </div>
               </div>

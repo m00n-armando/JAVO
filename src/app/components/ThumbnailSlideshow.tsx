@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 
 interface ThumbnailSlideshowProps {
   images: string[];
@@ -29,8 +29,9 @@ const ThumbnailSlideshow: React.FC<ThumbnailSlideshowProps> = ({ images }) => {
           <Image
             src={src}
             alt={`Thumbnail image ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             priority={index === 0}
           />
         </div>

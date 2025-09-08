@@ -48,6 +48,7 @@ const translations = {
     viewDetail: 'Lihat Detail',
     daysNights: 'hari malam',
     days: 'hari',
+    price: 'Rp 1.500.000',
 
     // CTA
     readyAdventure: 'Siap untuk Petualangan?',
@@ -63,40 +64,16 @@ const translations = {
     whatsapp: 'WhatsApp',
     allRightsReserved: 'All rights reserved.',
 
-    // Booking Form
-    bookingForm: 'Form Pemesanan',
-    fullName: 'Nama Lengkap',
-    phoneNumber: 'Nomor Telepon',
-    selectDestination: 'Pilih Destinasi',
-    selectDestinationPlaceholder: 'Pilih destinasi...',
-    departureDate: 'Tanggal Keberangkatan',
-    numberOfParticipants: 'Jumlah Peserta',
-    selectPackage: 'Pilih Paket',
-    selectPackagePlaceholder: 'Pilih paket...',
-    premiumPackage: 'Paket Premium',
-    standardPackage: 'Paket Standard',
-    budgetPackage: 'Paket Budget',
-    additionalNotes: 'Catatan Tambahan',
-    notesPlaceholder: 'Kebutuhan khusus, alergi, dll...',
-    bookingSummary: 'Ringkasan Pemesanan',
-    destination: 'Destinasi:',
-    participants: 'Jumlah Peserta:',
-    packageLabel: 'Paket:',
-    total: 'Total:',
-    confirmBooking: 'Konfirmasi Pemesanan',
-    termsAndConditions: 'Dengan mengirim form ini, Anda menyetujui syarat dan ketentuan kami.',
-    paymentInfo: 'Pembayaran dapat dilakukan via transfer bank atau e-wallet.',
-
-    // Pickup Location
-    pickupLocation: 'Lokasi Penjemputan',
-    pickupLocationPlaceholder: 'Masukkan alamat penjemputan (opsional)',
-    pickupInfo: 'Biaya penjemputan akan ditambahkan ke total pembayaran',
-    optional: 'opsional',
-
-    // Destinations
-    ijenDestination: 'Gunung Ijen (Blue Fire)',
-    bromoDestination: 'Gunung Bromo',
-    tumpakSewuDestination: 'Air Terjun Tumpak Sewu',
+    // Testimonials
+    whatOurCustomersSay: 'Apa Kata Pelanggan Kami',
+    customerTestimonials: 'Testimoni Pelanggan',
+    testimonials: {
+      isabellaRodriguezTestimonial: "Pemandu sangat berpengetahuan dan pemandangannya menakjubkan. Sangat direkomendasikan!",
+      hansPeterMullerTestimonial: "Saya tidak pernah membayangkan keindahan seperti ini di Jawa Timur. Perjalanan yang tak terlupakan bersama JAVO!",
+      anyaPetrovaTestimonial: "Pelayanan yang ramah dan profesional. Semua diatur dengan sempurna, membuat perjalanan saya sangat nyaman.",
+      kenjiTanakaTestimonial: "Pemandangan matahari terbit di Bromo adalah sesuatu yang harus dilihat seumur hidup. Terima kasih JAVO!",
+      fatimaAlMansooriTestimonial: "Air Terjun Tumpak Sewu benar-benar memukau. JAVO membuat petualangan ini mudah dan menyenangkan.",
+    },
   },
   en: {
     // Header
@@ -133,6 +110,7 @@ const translations = {
     viewDetail: 'View Detail',
     daysNights: 'days nights',
     days: 'days',
+    price: 'Rp 1.500.000',
 
     // CTA
     readyAdventure: 'Ready for Adventure?',
@@ -148,48 +126,33 @@ const translations = {
     whatsapp: 'WhatsApp',
     allRightsReserved: 'All rights reserved.',
 
-    // Booking Form
-    bookingForm: 'Booking Form',
-    fullName: 'Full Name',
-    phoneNumber: 'Phone Number',
-    selectDestination: 'Select Destination',
-    selectDestinationPlaceholder: 'Select destination...',
-    departureDate: 'Departure Date',
-    numberOfParticipants: 'Number of Participants',
-    selectPackage: 'Select Package',
-    selectPackagePlaceholder: 'Select package...',
-    premiumPackage: 'Premium Package',
-    standardPackage: 'Standard Package',
-    budgetPackage: 'Budget Package',
-    additionalNotes: 'Additional Notes',
-    notesPlaceholder: 'Special needs, allergies, etc...',
-    bookingSummary: 'Booking Summary',
-    destination: 'Destination:',
-    participants: 'Participants:',
-    packageLabel: 'Package:',
-    total: 'Total:',
-    confirmBooking: 'Confirm Booking',
-    termsAndConditions: 'By submitting this form, you agree to our terms and conditions.',
-    paymentInfo: 'Payment can be made via bank transfer or e-wallet.',
-
-    // Pickup Location
-    pickupLocation: 'Pickup Location',
-    pickupLocationPlaceholder: 'Enter pickup address (optional)',
-    pickupInfo: 'Pickup fee will be added to the total payment',
-    optional: 'optional',
-
-    // Destinations
-    ijenDestination: 'Mount Ijen (Blue Fire)',
-    bromoDestination: 'Mount Bromo',
-    tumpakSewuDestination: 'Tumpak Sewu Waterfall',
-  }
+    // Testimonials
+    whatOurCustomersSay: 'What Our Customers Say',
+    customerTestimonials: 'Customer Testimonials',
+    testimonials: {
+      isabellaRodriguezTestimonial: "Pemandu sangat berpengetahuan dan pemandangannya menakjubkan. Sangat direkomendasikan!",
+      hansPeterMullerTestimonial: "Saya tidak pernah membayangkan keindahan seperti ini di Jawa Timur. Perjalanan yang tak terlupakan bersama JAVO!",
+      anyaPetrovaTestimonial: "Pelayanan yang ramah dan profesional. Semua diatur dengan sempurna, membuat perjalanan saya sangat nyaman.",
+      kenjiTanakaTestimonial: "Pemandangan matahari terbit di Bromo adalah sesuatu yang harus dilihat seumur hidup. Terima kasih JAVO!",
+      fatimaAlMansooriTestimonial: "Air Terjun Tumpak Sewu benar-benar memukau. JAVO membuat petualangan ini mudah dan menyenangkan.",
+    },
+  },
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('id');
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations['id']] || key;
+    const keys = key.split('.');
+    let currentTranslation: any = translations[language];
+    for (const k of keys) {
+      if (currentTranslation && typeof currentTranslation === 'object' && k in currentTranslation) {
+        currentTranslation = currentTranslation[k];
+      } else {
+        return key; // Return the key itself if translation not found
+      }
+    }
+    return typeof currentTranslation === 'string' ? currentTranslation : key;
   };
 
   return (

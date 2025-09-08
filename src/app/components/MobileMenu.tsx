@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import { useLanguage } from "../context/LanguageContext";
 
 const MobileMenu = () => {
@@ -74,7 +74,6 @@ const MobileMenu = () => {
             <Link href="/ijen" className="text-gray-700 hover:text-blue-600 font-medium" onClick={toggleMenu}>{t('ijen')}</Link>
             <Link href="/bromo" className="text-gray-700 hover:text-blue-600 font-medium" onClick={toggleMenu}>{t('bromo')}</Link>
             <Link href="/tumpak-sewu" className="text-gray-700 hover:text-blue-600 font-medium" onClick={toggleMenu}>{t('tumpakSewu')}</Link>
-            <Link href="/map" className="text-gray-700 hover:text-blue-600 font-medium" onClick={toggleMenu}>Peta</Link> {/* Added Map Link */}
             <Link href="/kontak" className="text-gray-700 hover:text-blue-600 font-medium" onClick={toggleMenu}>{t('contact')}</Link>
             <Link href="/pemesanan" className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-center" onClick={toggleMenu}>
               {t('bookTour')}

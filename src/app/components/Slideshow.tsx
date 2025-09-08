@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 
 const images = [
   "https://i.imgur.com/7PgTlAd.jpeg",
@@ -29,8 +29,9 @@ const Slideshow = () => {
           <Image
             src={src}
             alt={`Slideshow image ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             priority={index === 0}
           />
         </div>
