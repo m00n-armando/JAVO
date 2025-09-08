@@ -3,9 +3,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from "../context/LanguageContext";
+import MobileMenu from "../components/MobileMenu";
 
 export default function TumpakSewuPage() {
   const { language, setLanguage, t } = useLanguage();
+
+  const tumpakSewuImages = [
+    "https://i.imgur.com/gm95342.jpeg",
+    "https://i.imgur.com/A2stutf.jpeg",
+    "https://i.imgur.com/wjgpu8E.jpeg",
+    "https://i.imgur.com/HNE85O5.jpeg",
+    "https://i.imgur.com/FhvPC4X.jpeg",
+    "https://i.imgur.com/sdsEjoj.jpeg",
+    "https://i.imgur.com/ZEGfvKW.jpeg"
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -25,9 +36,10 @@ export default function TumpakSewuPage() {
               <Link href="/ijen" className="text-gray-700 hover:text-blue-600 font-medium">{t('ijen')}</Link>
               <Link href="/bromo" className="text-gray-700 hover:text-blue-600 font-medium">{t('bromo')}</Link>
               <Link href="/tumpak-sewu" className="text-gray-700 hover:text-blue-600 font-medium">{t('tumpakSewu')}</Link>
+              <Link href="/map" className="text-gray-700 hover:text-blue-600 font-medium">Peta</Link> {/* Added Map Link */}
               <Link href="/kontak" className="text-gray-700 hover:text-blue-600 font-medium">{t('contact')}</Link>
             </nav>
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               {/* Language Toggle */}
               <div className="flex bg-gray-100 rounded-lg p-1">
                 <button
@@ -51,6 +63,7 @@ export default function TumpakSewuPage() {
                 {t('bookTour')}
               </Link>
             </div>
+            <MobileMenu />
           </div>
         </div>
       </header>
@@ -103,13 +116,24 @@ export default function TumpakSewuPage() {
               <p className="text-gray-700">
                 {language === 'id' ? 'Include: Transport, guide, tiket masuk, makan siang' : 'Include: Transport, guide, entrance ticket, lunch'}
               </p>
-              <p className="text-2xl font-bold text-blue-600">Rp 350.000/pax</p>
+              <p className="text-2xl font-bold text-blue-600">Rp 1.500.000/pax</p>
             </div>
 
             <div className="text-center">
               <Link href="/pemesanan" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
                 {language === 'id' ? 'Pesan Paket Ini' : 'Book This Package'}
               </Link>
+            </div>
+
+            <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+              {language === 'id' ? 'Galeri' : 'Gallery'}
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {tumpakSewuImages.map((url, idx) => (
+                <div key={idx} className="relative w-full h-40 md:h-48 lg:h-56 rounded-lg overflow-hidden">
+                  <Image src={url} alt={"Tumpak Sewu " + (idx + 1)} fill className="object-cover" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -3,9 +3,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from "../context/LanguageContext";
+import MobileMenu from "../components/MobileMenu";
 
 export default function IjenPage() {
   const { language, setLanguage, t } = useLanguage();
+
+  const ijenImages = [
+    "https://i.imgur.com/k7MzNGk.jpeg",
+    "https://i.imgur.com/NoKdiM8.jpeg",
+    "https://i.imgur.com/1qGAx9L.jpeg",
+    "https://i.imgur.com/iVWcVjG.jpeg",
+    "https://i.imgur.com/BVk8QqL.jpeg",
+    "https://i.imgur.com/tRYh8Mx.jpeg",
+    "https://i.imgur.com/SAyIBXP.jpeg",
+    "https://i.imgur.com/MiF1WLD.jpeg",
+    "https://i.imgur.com/pjKzYqf.jpeg",
+    "https://i.imgur.com/NV5T3QM.jpeg",
+    "https://i.imgur.com/FuZNpTy.jpeg",
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -25,9 +40,10 @@ export default function IjenPage() {
               <Link href="/ijen" className="text-gray-700 hover:text-blue-600 font-medium">{t('ijen')}</Link>
               <Link href="/bromo" className="text-gray-700 hover:text-blue-600 font-medium">{t('bromo')}</Link>
               <Link href="/tumpak-sewu" className="text-gray-700 hover:text-blue-600 font-medium">{t('tumpakSewu')}</Link>
+              <Link href="/map" className="text-gray-700 hover:text-blue-600 font-medium">Peta</Link> {/* Added Map Link */}
               <Link href="/kontak" className="text-gray-700 hover:text-blue-600 font-medium">{t('contact')}</Link>
             </nav>
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               {/* Language Toggle */}
               <div className="flex bg-gray-100 rounded-lg p-1">
                 <button
@@ -51,6 +67,7 @@ export default function IjenPage() {
                 {t('bookTour')}
               </Link>
             </div>
+            <MobileMenu />
           </div>
         </div>
       </header>
@@ -58,7 +75,7 @@ export default function IjenPage() {
       {/* Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
+          <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://i.imgur.com/k7MzNGk.jpeg')"}}></div>
           <div className="p-8">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">{t('ijen')}</h2>
             <p className="text-gray-700 mb-6">
@@ -109,6 +126,17 @@ export default function IjenPage() {
               <Link href="/pemesanan" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
                 {language === 'id' ? 'Pesan Paket Ini' : 'Book This Package'}
               </Link>
+            </div>
+
+            <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+              {language === 'id' ? 'Galeri' : 'Gallery'}
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {ijenImages.map((url, idx) => (
+                <div key={idx} className="relative w-full h-40 md:h-48 lg:h-56 rounded-lg overflow-hidden">
+                  <Image src={url} alt={"Ijen " + (idx + 1)} fill className="object-cover" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

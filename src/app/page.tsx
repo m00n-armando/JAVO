@@ -3,9 +3,50 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "./context/LanguageContext";
+import { useEffect, useState } from "react";
+import Slideshow from "./components/Slideshow";
+import MobileMenu from "./components/MobileMenu";
+import ThumbnailSlideshow from "./components/ThumbnailSlideshow";
 
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
+
+  const bromoImages = [
+    "https://i.imgur.com/PGIn9WC.jpeg",
+    "https://i.imgur.com/BEBF6hQ.jpeg",
+    "https://i.imgur.com/P2EmQjP.jpeg",
+    "https://i.imgur.com/oaP3uCl.jpeg",
+    "https://i.imgur.com/KHmXV2G.jpeg",
+    "https://i.imgur.com/86a36cY.jpeg",
+    "https://i.imgur.com/zC9PX10.jpeg",
+    "https://i.imgur.com/zneSmR9.jpeg",
+    "https://i.imgur.com/X7OK6I2.jpeg",
+    "https://i.imgur.com/uJNXKKz.jpeg",
+  ];
+
+  const ijenImages = [
+    "https://i.imgur.com/k7MzNGk.jpeg",
+    "https://i.imgur.com/NoKdiM8.jpeg",
+    "https://i.imgur.com/1qGAx9L.jpeg",
+    "https://i.imgur.com/iVWcVjG.jpeg",
+    "https://i.imgur.com/BVk8QqL.jpeg",
+    "https://i.imgur.com/tRYh8Mx.jpeg",
+    "https://i.imgur.com/SAyIBXP.jpeg",
+    "https://i.imgur.com/MiF1WLD.jpeg",
+    "https://i.imgur.com/pjKzYqf.jpeg",
+    "https://i.imgur.com/NV5T3QM.jpeg",
+    "https://i.imgur.com/FuZNpTy.jpeg",
+  ];
+
+  const tumpakSewuImages = [
+    "https://i.imgur.com/gm95342.jpeg",
+    "https://i.imgur.com/A2stutf.jpeg",
+    "https://i.imgur.com/wjgpu8E.jpeg",
+    "https://i.imgur.com/HNE85O5.jpeg",
+    "https://i.imgur.com/FhvPC4X.jpeg",
+    "https://i.imgur.com/sdsEjoj.jpeg",
+    "https://i.imgur.com/ZEGfvKW.jpeg"
+  ];
 
   return (
     <div className="min-h-screen">
@@ -25,9 +66,10 @@ export default function Home() {
               <Link href="/ijen" className="text-gray-700 hover:text-blue-600 font-medium">{t('ijen')}</Link>
               <Link href="/bromo" className="text-gray-700 hover:text-blue-600 font-medium">{t('bromo')}</Link>
               <Link href="/tumpak-sewu" className="text-gray-700 hover:text-blue-600 font-medium">{t('tumpakSewu')}</Link>
+              <Link href="/map" className="text-gray-700 hover:text-blue-600 font-medium">Peta</Link> {/* Added Map Link */}
               <Link href="/kontak" className="text-gray-700 hover:text-blue-600 font-medium">{t('contact')}</Link>
             </nav>
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               {/* Language Toggle */}
               <div className="flex bg-gray-100 rounded-lg p-1">
                 <button
@@ -51,14 +93,17 @@ export default function Home() {
                 {t('bookTour')}
               </Link>
             </div>
+            <MobileMenu />
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"}}>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
+      <section className="relative h-screen overflow-hidden">
+        {/* Slideshow background */}
+        <Slideshow />
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        <div className="relative z-20 flex items-center justify-center h-full">
           <div className="text-center text-white px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">{t('exploreBeauty')}</h2>
             <h3 className="text-3xl md:text-4xl font-semibold mb-8">{t('mountainsEastJava')}</h3>
@@ -120,7 +165,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Ijen */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
+              <div className="h-64">
+                <ThumbnailSlideshow images={ijenImages} />
+              </div>
               <div className="p-6">
                 <h4 className="text-2xl font-bold mb-2 text-gray-900">{t('ijen')}</h4>
                 <p className="text-gray-700 mb-4">{t('blueFire')}</p>
@@ -136,12 +183,14 @@ export default function Home() {
 
             {/* Bromo */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
+              <div className="h-64">
+                <ThumbnailSlideshow images={bromoImages} />
+              </div>
               <div className="p-6">
                 <h4 className="text-2xl font-bold mb-2 text-gray-900">{t('bromo')}</h4>
                 <p className="text-gray-700 mb-4">{t('legendarySunrise')}</p>
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-2xl font-bold text-blue-600">Rp 800.000</span>
+                  <span className="text-2xl font-bold text-blue-600">Rp 1.500.000</span>
                   <span className="text-sm text-gray-600">1-2 {t('days')}</span>
                 </div>
                 <Link href="/bromo" className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-center block">
@@ -152,12 +201,14 @@ export default function Home() {
 
             {/* Tumpak Sewu */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <div className="h-64 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"}}></div>
+              <div className="h-64">
+                <ThumbnailSlideshow images={tumpakSewuImages} />
+              </div>
               <div className="p-6">
                 <h4 className="text-2xl font-bold mb-2 text-gray-900">{t('tumpakSewu')}</h4>
                 <p className="text-gray-700 mb-4">{t('largestWaterfall')}</p>
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-2xl font-bold text-blue-600">Rp 350.000</span>
+                  <span className="text-2xl font-bold text-blue-600">Rp 1.500.000</span>
                   <span className="text-sm text-gray-600">1 {t('days')}</span>
                 </div>
                 <Link href="/tumpak-sewu" className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-center block">
