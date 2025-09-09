@@ -4,6 +4,8 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'id' | 'en';
 
+type TranslationValue = string | { [key: string]: TranslationValue };
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -12,7 +14,11 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const translations = {
+type TranslationObject = {
+  [key: string]: TranslationValue;
+};
+
+const translations: Record<Language, TranslationObject> = {
   id: {
     // Header
     home: 'Beranda',
@@ -144,7 +150,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let currentTranslation: { [key: string]: any } = translations[language];
+    let currentTranslation: TranslationValue = translations[language];
     for (const k of keys) {
       if (currentTranslation && typeof currentTranslation === 'object' && k in currentTranslation) {
         currentTranslation = currentTranslation[k];

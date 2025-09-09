@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from "../context/LanguageContext";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export default function PemesananPage() {
   const { language, setLanguage, t } = useLanguage();
@@ -12,7 +12,7 @@ export default function PemesananPage() {
   const [numberOfParticipants, setNumberOfParticipants] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const prices: Record<string, Record<string, number>> = {
+  const prices: Record<string, Record<string, number>> = useMemo(() => ({
     ijen: {
       premium: 1500000,
       standard: 1500000,
@@ -28,7 +28,7 @@ export default function PemesananPage() {
       standard: 1500000,
       budget: 1500000,
     },
-  };
+  }), []);
 
   useEffect(() => {
     if (selectedDestination && selectedPackage && numberOfParticipants > 0) {
