@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "./context/LanguageContext";
-import { useEffect, useState } from "react";
 import Slideshow from "./components/Slideshow";
 import MobileMenu from "./components/MobileMenu";
 import ThumbnailSlideshow from "./components/ThumbnailSlideshow";
@@ -300,7 +299,7 @@ export default function Home() {
                 <Image src="/logo.png" alt="JAVO Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
                 <h4 className="text-xl font-bold">JAVO</h4>
               </div>
-              <p className="text-gray-300">Java Volcano Odyssey - Your Gateway to East Java's Natural Wonders</p>
+              <p className="text-gray-300">Java Volcano Odyssey - Your Gateway to East Java&apos;s Natural Wonders</p>
             </div>
             <div>
               <h5 className="text-lg font-semibold mb-4">{t('destinations')}</h5>

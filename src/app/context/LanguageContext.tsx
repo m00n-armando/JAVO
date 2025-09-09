@@ -144,7 +144,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let currentTranslation: any = translations[language];
+    let currentTranslation: { [key: string]: any } = translations[language];
     for (const k of keys) {
       if (currentTranslation && typeof currentTranslation === 'object' && k in currentTranslation) {
         currentTranslation = currentTranslation[k];

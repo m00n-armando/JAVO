@@ -37,7 +37,7 @@ export default function PemesananPage() {
     } else {
       setTotalPrice(0);
     }
-  }, [selectedDestination, selectedPackage, numberOfParticipants]);
+  }, [selectedDestination, selectedPackage, numberOfParticipants, prices]);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat(language === 'id' ? 'id-ID' : 'en-US', {
